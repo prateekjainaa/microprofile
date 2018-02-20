@@ -5,6 +5,6 @@ import javax.ws.rs.core.Application;
 /**
  * @author prateek
  */
-@ApplicationPath("/")
+@ApplicationPath("/root")
 public class JaxRsActivator extends Application {
 }
