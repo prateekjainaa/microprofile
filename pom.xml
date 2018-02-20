@@ -30,25 +30,49 @@
 
 	<dependencies>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.eclipse.microprofile</groupId>
 			<artifactId>microprofile</artifactId>
 			<version>1.2</version>
 			<type>pom</type>
 			<scope>provided</scope>
-		</dependency>
+		</dependency> -->
 
-
+		<!-- WildFly Swarm Fractions -->
 		<dependency>
 			<groupId>org.wildfly.swarm</groupId>
 			<artifactId>jaxrs</artifactId>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>org.wildfly.swarm</groupId>
-			<artifactId>cdi</artifactId>
+			<artifactId>microprofile</artifactId>
 		</dependency>
-
+		the mp-metrics fraction
+		<dependency>
+			<groupId>org.wildfly.swarm</groupId>
+			<artifactId>microprofile-metrics</artifactId>
+		</dependency>
+		the mp health fraction
+		<dependency>
+			<groupId>org.wildfly.swarm</groupId>
+			<artifactId>microprofile-health</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.wildfly.swarm</groupId>
+			<artifactId>microprofile-fault-tolerance</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.wildfly.swarm</groupId>
+			<artifactId>microprofile-config</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.wildfly.swarm</groupId>
+			<artifactId>microprofile-jwt</artifactId>
+		</dependency> -->
 	</dependencies>
+
 
 
 	<build>
@@ -63,36 +87,20 @@
 			<plugin>
 				<groupId>org.wildfly.swarm</groupId>
 				<artifactId>wildfly-swarm-plugin</artifactId>
+				<version>${version.wildfly.swarm}</version>
 				<executions>
 					<execution>
-						<id>package</id>
-					</execution>
-					<execution>
-						<id>start</id>
-					</execution>
-					<execution>
-						<id>stop</id>
+						<goals>
+							<goal>package</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 	</build>
 
-	<repositories>
-		<repository>
-			<id>jboss-public-repository-group</id>
-			<name>JBoss Public Repository Group</name>
-			<url>https://repository.jboss.org/nexus/content/groups/public/</url>
-			<!-- <releases>
-				<enabled>true</enabled>
-				<updatePolicy>never</updatePolicy>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>never</updatePolicy>
-			</snapshots> -->
-		</repository>
-	</repositories>
-
+	<!-- <repositories> <repository> <id>jboss-public-repository-group</id> 
+		<name>JBoss Public Repository Group</name> <url>https://repository.jboss.org/nexus/content/groups/public/</url> 
+		</repository> </repositories> -->
 
 </project>
