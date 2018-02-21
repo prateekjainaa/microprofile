@@ -2,6 +2,7 @@ package com.pjain.rest;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
@@ -23,6 +24,7 @@ public class HelloResource {
 
     @GET
     @Path("/hello")
+    @Produces("application/json")
     public Response helloCall(@QueryParam("name") final String name) {
         return Response.status(200).entity("Hello! " + name).build();
     }
