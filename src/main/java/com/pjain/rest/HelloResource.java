@@ -8,6 +8,9 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
+import org.eclipse.microprofile.metrics.annotation.Metered;
+import org.eclipse.microprofile.metrics.annotation.Timed;
+
 /**
 *
 * Just to test. create new resource for project.
@@ -25,6 +28,8 @@ public class HelloResource {
     @GET
     @Path("/hello")
     @Produces("application/json")
+    @Timed(displayName="onMethod")
+    @Metered(absolute=true, name="meteredOnMethod")
     public Response helloCall(@QueryParam("name") final String name) {
         return Response.status(200).entity("Hello! " + name).build();
     }
